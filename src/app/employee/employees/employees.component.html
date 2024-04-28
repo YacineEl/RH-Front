@@ -1,0 +1,13 @@
+<div class="row">
+  <div class="col-md-5">
+    <app-employee-list (employeeSelected)="employeeReceived($event)"></app-employee-list>
+  </div>
+  <div class="col-md-7">
+    <ng-container *ngIf="emp"> 
+      <app-employee-details [employeeToDisplay]="emp"></app-employee-details>
+    </ng-container>
+    <ng-container *ngIf="!emp">
+      <p>Please Select An Employee</p>
+    </ng-container>
+  </div>      
+</div>

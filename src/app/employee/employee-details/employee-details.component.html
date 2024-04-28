@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <h2>Employee Details</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <p><strong>Matricule:</strong> {{ employeeToDisplay.matricule }}</p>
+      <p><strong>Nom:</strong> {{ employeeToDisplay.nom }}</p>
+      <p><strong>Prenom:</strong> {{ employeeToDisplay.prenom }}</p>
+      <p><strong>Code CNSS:</strong> {{ employeeToDisplay.codeCNSS || "N/A" }}</p>
+      <p>
+        <strong>Date de Naissance:</strong>
+        {{ employeeToDisplay.dateNaissance ? (employeeToDisplay.dateNaissance | date) : "N/A" }}
+      </p>
+      <p><strong>Téléphone:</strong> {{ employeeToDisplay.telephone || "N/A" }}</p>
+      <p><strong>Adresse:</strong> {{ employeeToDisplay.adresse || "N/A" }}</p>
+      <p>
+        <strong>Situation Familiale:</strong>
+        {{ employeeToDisplay.situationFamiliale || "N/A" }}
+      </p>
+      <p>
+        <strong>Photo Identité:</strong>
+        <img
+          [src]="employeeToDisplay.photoIdentite"
+          alt="Photo Identité"
+          width="100"
+        />
+      </p>
+    </div>
+  </div>
+</div>

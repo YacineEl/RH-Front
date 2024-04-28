@@ -1,0 +1,11 @@
+<div class="row">
+  <div class="col-xs-12">
+    <button class="btn btn-info">New Employee</button>
+  </div>
+</div>
+<div class="com-xs-12">
+  <app-employee-item
+      *ngFor="let employee of employees"
+      [employee]="employee"
+      (employeeSelected)="onEmployeeSelected($event)"></app-employee-item>
+</div>
