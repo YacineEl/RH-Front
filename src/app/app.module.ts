@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { EmployeeItemComponent } from './employee/employee-item/employee-item.component';
@@ -8,6 +8,8 @@ import { EmployeeListComponent } from './employee/employee-list/employee-list.co
 import { EmployeeDetailsComponent } from './employee/employee-details/employee-details.component';
 import { EmployeesComponent } from './employee/employees/employees.component';
 import { HttpClientModule } from '@angular/common/http';
+import { AppRoutingModule } from './app-routing.module';
+import { CreateEmployeeComponent } from './employee/create-employee/create-employee.component';
 
 @NgModule({
   declarations: [
@@ -15,12 +17,15 @@ import { HttpClientModule } from '@angular/common/http';
     EmployeeItemComponent,
     EmployeeListComponent,
     EmployeeDetailsComponent,
-    EmployeesComponent
+    EmployeesComponent,
+    CreateEmployeeComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [
     provideClientHydration()
