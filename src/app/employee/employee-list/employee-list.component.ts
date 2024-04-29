@@ -11,7 +11,7 @@ export class EmployeeListComponent {
   employees : Employee[] = [];
   @Output() employeeSelected = new EventEmitter<Employee>();
 
-  constructor(private employeeService: EmployeeService) {  }
+  constructor(private employeeService: EmployeeService) {}
 
   ngOnInit() {
     this.getEmployees();

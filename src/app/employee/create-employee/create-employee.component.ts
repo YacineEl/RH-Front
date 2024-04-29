@@ -40,7 +40,7 @@ export class CreateEmployeeComponent {
   }
 
   goToEmployeeList(){
-    this.router.navigate(['/employees']);
+    this.router.navigate(['employees']);
   }
 
   onSubmit(): void {
@@ -59,7 +59,6 @@ export class CreateEmployeeComponent {
         formData.photoIdentite
       );
       this.saveEmployee(newEmployee);
-      console.log(newEmployee);
     }
   }
 }

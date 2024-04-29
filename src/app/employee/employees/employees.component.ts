@@ -8,7 +8,7 @@ import { Employee } from '../employee.model';
 })
 export class EmployeesComponent {
 
-  emp : Employee | null = null;
+  emp : Employee;
 
   employeeReceived(event: Employee){
     this.emp = event;
