@@ -1,4 +1,4 @@
-<a href="#" class="list-group-item clearfix" (click)="selectEmployee()">
+<button class="list-group-item clickable" (click)="selectEmployee()" [routerLink]="['/']">
     <div class="row">
         <div class="col-md-4">
             {{employee.matricule}}
@@ -10,4 +10,4 @@
             {{employee.prenom}}
         </div>
     </div>
-</a>
+</button>

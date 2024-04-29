@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Employee } from '../employee.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-employee-details',
@@ -9,7 +10,9 @@ import { Employee } from '../employee.model';
 export class EmployeeDetailsComponent {
   @Input() employeeToDisplay: Employee;
   
-  ngAfterViewChecked(): void {
-    console.log(this.employeeToDisplay);
+  constructor(private router: Router) { }
+
+  updateEmployee(id:number): void {
+    this.router.navigate(['update-employee', id]);
   }
 }

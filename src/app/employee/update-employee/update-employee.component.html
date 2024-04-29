@@ -1,0 +1,43 @@
+<div class="container">
+    <h2>Update Employee</h2>
+    <form [formGroup]="employeeForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="matricule">Matricule</label>
+        <input type="text" class="form-control" id="matricule" formControlName="matricule" required>
+      </div>
+      <div class="form-group">
+        <label for="nom">Nom</label>
+        <input type="text" class="form-control" id="nom" formControlName="nom" required>
+      </div>
+      <div class="form-group">
+        <label for="prenom">Prénom</label>
+        <input type="text" class="form-control" id="prenom" formControlName="prenom" required>
+      </div>
+      <div class="form-group">
+        <label for="codeCNSS">Code CNSS</label>
+        <input type="text" class="form-control" id="codeCNSS" formControlName="codeCNSS">
+      </div>
+      <div class="form-group">
+        <label for="dateNaissance">Date de Naissance</label>
+        <input type="date" class="form-control" id="dateNaissance" formControlName="dateNaissance">
+      </div>
+      <div class="form-group">
+        <label for="telephone">Téléphone</label>
+        <input type="tel" class="form-control" id="telephone" formControlName="telephone">
+      </div>
+      <div class="form-group">
+        <label for="adresse">Adresse</label>
+        <input type="text" class="form-control" id="adresse" formControlName="adresse">
+      </div>
+      <div class="form-group">
+        <label for="situationFamiliale">Situation Familiale</label>
+        <input type="text" class="form-control" id="situationFamiliale" formControlName="situationFamiliale">
+      </div>
+      <div class="form-group">
+        <label for="photoIdentite">Photo Identité</label>
+        <input type="text" class="form-control" id="photoIdentite" formControlName="photoIdentite">
+      </div>
+      <button type="submit" class="btn btn-primary">Update Employee</button>
+    </form>
+  </div>
+  
