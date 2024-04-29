@@ -18,6 +18,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { CreateEmployeeComponent } from './employee/create-employee/create-employee.component';
 import { UpdateEmployeeComponent } from './employee/update-employee/update-employee.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CongeComponent } from './employee/conge/conge.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     EmployeeDetailsComponent,
     EmployeesComponent,
     CreateEmployeeComponent,
-    UpdateEmployeeComponent
+    UpdateEmployeeComponent,
+    CongeComponent
   ],
   imports: [
     BrowserModule,

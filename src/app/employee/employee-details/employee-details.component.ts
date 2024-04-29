@@ -15,4 +15,7 @@ export class EmployeeDetailsComponent {
   updateEmployee(id:number): void {
     this.router.navigate(['update-employee', id]);
   }
+  congeEmployee(id:number):void{
+    this.router.navigate(['conge-employee', id]);
+  }
 }

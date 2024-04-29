@@ -15,7 +15,7 @@ export class Employee {
     situationFamiliale?: string;
     photoIdentite?: string;
     bulletinPaie?: BulletinPaie;
-    conge?:Conge;
+    conges?:Conge[];
     metier?:Metier;
     contrat?:Contrat;
   
@@ -31,7 +31,7 @@ export class Employee {
       situationFamiliale?: string,
       photoIdentite?: string,
       bulletinPaie?: BulletinPaie,
-      conge?: Conge,
+      conges?: Conge[],
       metier?: Metier,
       contrat?: Contrat
     ) {
@@ -46,7 +46,7 @@ export class Employee {
       this.situationFamiliale = situationFamiliale;
       this.photoIdentite = photoIdentite;
       this.bulletinPaie = bulletinPaie;
-      this.conge = conge;
+      this.conges = conges;
       this.metier = metier;
       this.contrat = contrat;
     }
