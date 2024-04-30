@@ -1,0 +1,21 @@
+<div *ngIf="employee">
+  <h3>Employee: {{ employee.nom }} {{ employee.prenom }}</h3>
+  <h4>Contrats:</h4>
+  <div *ngIf="contrats">
+    <ul>
+      <li *ngFor="let contrat of contrats">
+        <p><strong>Type de Contrat:</strong> {{ contrat.typeContrat }}</p>
+        <p><strong>Date de Début:</strong> {{ contrat.dateDebut | date }}</p>
+        <p><strong>Date de Fin:</strong> {{ contrat.dateFin | date }}</p>
+        <p><strong>Salaire Brut:</strong> {{ contrat.salaireBrut }}</p>
+      </li>
+    </ul>
+  </div>
+  <div *ngIf="!contrats || contrats.length === 0">
+    <p>Aucun contrat enregistré pour cet employé.</p>
+  </div>
+  <button (click)="showAddContratForm()" class="btn btn-info">
+    Ajouter un contrat
+  </button>
+  <app-add-contrat *ngIf="showAddContrat"></app-add-contrat>
+</div>

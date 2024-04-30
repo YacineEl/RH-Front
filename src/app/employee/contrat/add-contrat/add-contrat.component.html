@@ -1,0 +1,40 @@
+<div class="col-md-6 offset-md-3">
+    <h3>Add Contrat</h3>
+    <form [formGroup]="contratForm" (ngSubmit)="onSubmit()">
+
+        <div class="form-group">
+            <label for="typeContrat">Type de Contrat:</label>
+            <input type="text" id="typeContrat" formControlName="typeContrat" class="form-control" />
+            <div *ngIf="contratForm.get('typeContrat').invalid && contratForm.get('typeContrat').touched" class="invalid-feedback">
+                Type de Contrat is required.
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="dateDebut">Date de Début:</label>
+            <input type="date" id="dateDebut" formControlName="dateDebut" class="form-control" />
+            <div *ngIf="contratForm.get('dateDebut').invalid && contratForm.get('dateDebut').touched" class="invalid-feedback">
+                Date de Début is required.
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="dateFin">Date de Fin:</label>
+            <input type="date" id="dateFin" formControlName="dateFin" class="form-control" />
+            <div *ngIf="contratForm.get('dateFin').invalid && contratForm.get('dateFin').touched" class="invalid-feedback">
+                Date de Fin is required.
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="salaireBrut">Salaire Brut:</label>
+            <input type="number" id="salaireBrut" formControlName="salaireBrut" class="form-control" />
+        </div>
+
+        <div class="sub-btn">
+            <button type="submit" [disabled]="contratForm.invalid" class="btn btn-info">
+                Submit
+            </button>
+        </div>
+    </form>
+</div>

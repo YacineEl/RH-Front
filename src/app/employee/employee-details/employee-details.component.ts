@@ -18,4 +18,7 @@ export class EmployeeDetailsComponent {
   congeEmployee(id:number):void{
     this.router.navigate(['conge-employee', id]);
   }
+  contratEmployee(id:number):void{
+    this.router.navigate(['contrat-employee', id]);
+  }
 }

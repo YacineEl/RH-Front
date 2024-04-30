@@ -25,10 +25,10 @@ export class CongeService {
   }
 
   deleteConge(id) {
-    return this.httpClient.delete(this.baseUrl + '/conges/' + id);
+    return this.httpClient.delete(`${this.baseUrl}/${id}`);
   }
 
-  getCongesByEmploye(empId) {
+  getCongesByEmploye(empId: number) {
     return this.httpClient.get<Conge[]>(`${this.baseUrl}/emp/${empId}`);
   }
 }
