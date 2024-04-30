@@ -1,0 +1,40 @@
+<div class="col-md-6 offset-md-3">
+    <h3>Add Conge</h3>
+    <form [formGroup]="congeForm" (ngSubmit)="onSubmit()">
+
+        <div class="form-group">
+            <label for="typeConge">Type de Conge:</label>
+            <input type="text" id="typeConge" formControlName="typeConge" class="form-control" />
+            <div *ngIf="congeForm.get('typeConge').invalid && congeForm.get('typeConge').touched" class="invalid-feedback">
+                Type de Conge is required.
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="dateDebut">Date de Début:</label>
+            <input type="date" id="dateDebut" formControlName="dateDebut" class="form-control" />
+            <div *ngIf="congeForm.get('dateDebut').invalid && congeForm.get('dateDebut').touched" class="invalid-feedback">
+                Date de Début is required.
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="dateFin">Date de Fin:</label>
+            <input type="date" id="dateFin" formControlName="dateFin" class="form-control" />
+            <div *ngIf="congeForm.get('dateFin').invalid && congeForm.get('dateFin').touched" class="invalid-feedback">
+                Date de Fin is required.
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="statut">Statut:</label>
+            <input type="text" id="statut" formControlName="statut" class="form-control" />
+        </div>
+
+        <div class="sub-btn">
+            <button type="submit" [disabled]="congeForm.invalid" class="btn btn-info">
+                Submit
+            </button>
+        </div>
+    </form>
+</div>

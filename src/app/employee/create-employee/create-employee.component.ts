@@ -18,7 +18,7 @@ export class CreateEmployeeComponent {
 
   constructor(private fb: FormBuilder, 
     private employeeService: EmployeeService,
-    private router:Router) {;
+    private router:Router) {
    }
 
   ngOnInit(): void {

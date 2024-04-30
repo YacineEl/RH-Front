@@ -1,18 +1,19 @@
 <div *ngIf="employee">
-    <h3>Employee: {{ employee.nom }} {{ employee.prenom }}</h3>
-    <h4>Congés:</h4>
-    <div *ngIf="employee.conges">
-      <ul>
-        <li *ngFor="let conge of employee.conges">
-          <p><strong>Type de Congé:</strong> {{ conge.typeConge }}</p>
-          <p><strong>Date de Début:</strong> {{ conge.dateDebut | date }}</p>
-          <p><strong>Date de Fin:</strong> {{ conge.dateFin | date }}</p>
-          <p><strong>Statut:</strong> {{ conge.statut }}</p>
-        </li>
-      </ul>
-    </div>
-    <div *ngIf="!employee.conges || employee.conges.length === 0">
-      <p>Aucun congé enregistré pour cet employé.</p>
-    </div>
+  <h3>Employee: {{ employee.nom }} {{ employee.prenom }}</h3>
+  <h4>Congés:</h4>
+  <div *ngIf="conges">
+    <ul>
+      <li *ngFor="let conge of conges">
+        <p><strong>Type de Congé:</strong> {{ conge.typeConge }}</p>
+        <p><strong>Date de Début:</strong> {{ conge.dateDebut | date }}</p>
+        <p><strong>Date de Fin:</strong> {{ conge.dateFin | date }}</p>
+        <p><strong>Statut:</strong> {{ conges.statut }}</p>
+      </li>
+    </ul>
   </div>
-  
+  <div *ngIf="!conges || conges.length === 0">
+    <p>Aucun congé enregistré pour cet employé.</p>
+  </div>
+  <button (click)="showAddCongeForm()" class="btn btn-info">Ajouter un congé</button>
+  <app-add-conge *ngIf="showAddConge"></app-add-conge>
+</div>

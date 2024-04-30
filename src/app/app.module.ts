@@ -19,6 +19,7 @@ import { CreateEmployeeComponent } from './employee/create-employee/create-emplo
 import { UpdateEmployeeComponent } from './employee/update-employee/update-employee.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CongeComponent } from './employee/conge/conge.component';
+import { AddCongeComponent } from './employee/conge/add-conge/add-conge.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { CongeComponent } from './employee/conge/conge.component';
     EmployeesComponent,
     CreateEmployeeComponent,
     UpdateEmployeeComponent,
-    CongeComponent
+    CongeComponent,
+    AddCongeComponent
   ],
   imports: [
     BrowserModule,
