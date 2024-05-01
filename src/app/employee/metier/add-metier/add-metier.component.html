@@ -1,0 +1,35 @@
+<div class="col-md-6 offset-md-3">
+    <h3>Add Metier</h3>
+    <form [formGroup]="metierForm" (ngSubmit)="onSubmit()">
+
+        <div class="form-group">
+            <label for="libelle">Libelle:</label>
+            <input type="text" id="libelle" formControlName="libelle" class="form-control" />
+            <div *ngIf="metierForm.get('libelle').invalid && metierForm.get('libelle').touched" class="invalid-feedback">
+                Libelle is required.
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="dateDebut">Date de Début:</label>
+            <input type="date" id="dateDebut" formControlName="dateDebut" class="form-control" />
+            <div *ngIf="metierForm.get('dateDebut').invalid && metierForm.get('dateDebut').touched" class="invalid-feedback">
+                Date de Début is required.
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="dateFin">Date de Fin:</label>
+            <input type="date" id="dateFin" formControlName="dateFin" class="form-control" />
+            <div *ngIf="metierForm.get('dateFin').invalid && metierForm.get('dateFin').touched" class="invalid-feedback">
+                Date de Fin is required.
+            </div>
+        </div>
+
+        <div class="sub-btn">
+            <button type="submit" [disabled]="metierForm.invalid" class="btn btn-info">
+                Submit
+            </button>
+        </div>
+    </form>
+</div>

@@ -22,6 +22,8 @@ import { CongeComponent } from './employee/conge/conge.component';
 import { AddCongeComponent } from './employee/conge/add-conge/add-conge.component';
 import { ContratComponent } from './employee/contrat/contrat.component';
 import { AddContratComponent } from './employee/contrat/add-contrat/add-contrat.component';
+import { MetierComponent } from './employee/metier/metier.component';
+import { AddMetierComponent } from './employee/metier/add-metier/add-metier.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,9 @@ import { AddContratComponent } from './employee/contrat/add-contrat/add-contrat.
     CongeComponent,
     AddCongeComponent,
     ContratComponent,
-    AddContratComponent
+    AddContratComponent,
+    MetierComponent,
+    AddMetierComponent
   ],
   imports: [
     BrowserModule,

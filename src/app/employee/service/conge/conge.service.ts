@@ -17,7 +17,7 @@ export class CongeService {
   }
 
   addConge(id,conge) {
-    return this.httpClient.post<Conge>(`${this.baseUrl}/${id}`, conge);
+    return this.httpClient.post<Conge>(`${this.baseUrl}/emp/${id}`, conge);
   }
 
   updateConge(id, conge) {

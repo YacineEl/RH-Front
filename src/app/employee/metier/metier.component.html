@@ -1,0 +1,19 @@
+<div *ngIf="employee">
+    <h3>Employee: {{ employee.nom }} {{ employee.prenom }}</h3>
+    <h4>Métiers:</h4>
+    <div *ngIf="metiers">
+      <ul>
+        <li *ngFor="let metier of metiers">
+          <p><strong>Nom du Métier:</strong> {{ metier.libelle }}</p>
+          <p><strong>Debut Métier:</strong> {{ metier.dateDebut }}</p>
+          <p><strong>Fin Métier:</strong> {{ metier.dateFin }}</p>
+        </li>
+      </ul>
+    </div>
+    <div *ngIf="!metiers || metiers.length === 0">
+      <p>Aucun métier enregistré pour cet employé.</p>
+    </div>
+    <button (click)="showAddMetierForm()" class="btn btn-info">Ajouter un métier</button>
+    <app-add-metier *ngIf="showAddMetier"></app-add-metier>
+  </div>
+  

@@ -21,4 +21,7 @@ export class EmployeeDetailsComponent {
   contratEmployee(id:number):void{
     this.router.navigate(['contrat-employee', id]);
   }
+  metierEmployee(id:number):void{
+    this.router.navigate(['metier-employee', id]);
+  }
 }
