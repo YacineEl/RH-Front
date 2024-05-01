@@ -44,7 +44,10 @@ export class AddCongeComponent implements OnInit {
       const congeData: Conge = this.congeForm.value as Conge;
       congeData.empId = this.conge.empId;
       this.congeService.addConge(this.theId, congeData).subscribe();
-      console.log(congeData);
+      console.log(congeData.dateDebut.getDay);
+      console.log(congeData.dateDebut.getMonth);
+      console.log(congeData.dateDebut.getFullYear);
+
       this.congeForm.reset();
     } else {
     }
