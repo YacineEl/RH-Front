@@ -8,6 +8,7 @@
         <p><strong>Date de Début:</strong> {{ conge.dateDebut | date }}</p>
         <p><strong>Date de Fin:</strong> {{ conge.dateFin | date }}</p>
         <p><strong>Statut:</strong> {{ conges.statut }}</p>
+        <button (click)="deleteConge(conge.id)" class="btn btn-danger">Supprimer</button>
       </li>
     </ul>
   </div>
@@ -15,5 +16,5 @@
     <p>Aucun congé enregistré pour cet employé.</p>
   </div>
   <button (click)="showAddCongeForm()" class="btn btn-info">Ajouter un congé</button>
-  <app-add-conge *ngIf="showAddConge"></app-add-conge>
+  <app-add-conge *ngIf="showAddConge" (newConge)="onNewConge($event)"></app-add-conge>
 </div>

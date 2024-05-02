@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Conge } from '../../models/conge.model';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +13,7 @@ export class CongeService {
 
   constructor(private httpClient: HttpClient) {}
 
-  getConges() {
+  getConges(): Observable<Conge[]> {
     return this.httpClient.get<Conge[]>(`${this.baseUrl}`);
   }
 
@@ -28,7 +29,7 @@ export class CongeService {
     return this.httpClient.delete(`${this.baseUrl}/${id}`);
   }
 
-  getCongesByEmploye(empId: number) {
+  getCongesByEmploye(empId: number): Observable<Conge[]> {
     return this.httpClient.get<Conge[]>(`${this.baseUrl}/emp/${empId}`);
   }
 }

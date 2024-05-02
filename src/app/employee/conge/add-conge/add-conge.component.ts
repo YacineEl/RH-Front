@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Validators, FormGroup, FormBuilder } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 
@@ -17,6 +17,7 @@ export class AddCongeComponent implements OnInit {
   congeForm: FormGroup;
   conge: Conge = new Conge();
   theId:number;
+  @Output() newConge: EventEmitter<Conge> = new EventEmitter<Conge>();
 
   constructor(private fb: FormBuilder,
     private congeService: CongeService,
@@ -43,11 +44,7 @@ export class AddCongeComponent implements OnInit {
     if (this.congeForm.valid) {
       const congeData: Conge = this.congeForm.value as Conge;
       congeData.empId = this.conge.empId;
-      this.congeService.addConge(this.theId, congeData).subscribe();
-      console.log(congeData.dateDebut.getDay);
-      console.log(congeData.dateDebut.getMonth);
-      console.log(congeData.dateDebut.getFullYear);
-
+      this.newConge.emit(congeData);
       this.congeForm.reset();
     } else {
     }
