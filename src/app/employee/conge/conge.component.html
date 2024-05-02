@@ -7,7 +7,7 @@
         <p><strong>Type de Congé:</strong> {{ conge.typeConge }}</p>
         <p><strong>Date de Début:</strong> {{ conge.dateDebut | date }}</p>
         <p><strong>Date de Fin:</strong> {{ conge.dateFin | date }}</p>
-        <p><strong>Statut:</strong> {{ conges.statut }}</p>
+        <p><strong>Statut:</strong> {{ conge.statut }}</p>
         <button (click)="deleteConge(conge.id)" class="btn btn-danger">Supprimer</button>
       </li>
     </ul>

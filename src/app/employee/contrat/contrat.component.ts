@@ -15,6 +15,7 @@ export class ContratComponent {
   contrats: Contrat[];
   employee: Employee;
   showAddContrat: boolean = false;
+  employeeId: number;
 
   constructor(private employeeService: EmployeeService,
     private route: ActivatedRoute,
@@ -22,20 +23,36 @@ export class ContratComponent {
   }
 
   ngOnInit(): void {
+    this.getData();
+  }
+
+  getData(){
     const employeeId = Number(this.route.snapshot.paramMap.get('id'));
-    console.log(employeeId);
     this.employeeService.getEmployeeById(employeeId).subscribe((employee) => {
       this.employee = employee;
     });
-    this.contratService.getContratsByEmploye(employeeId).subscribe((employee) => {
-      this.contrats = employee;
-      console.log(this.contrats);
-    }
+    this.contratService.getContratsByEmploye(employeeId).subscribe((contrat) => {
+        this.contrats = contrat;
+        console.log(this.contrats);
+      }
+    );
+  }
+
+  deleteContrat(id: number) {
+    this.contratService.deleteContrat(id).subscribe(()=>
+    this.getData()
     );
   }
 
   showAddContratForm(){
     this.showAddContrat = !this.showAddContrat;
   }
-  
+
+  OnNewContrat(contratData: Contrat) {
+    this.employeeId = contratData.empId;
+    this.contratService.addContrat(this.employeeId,contratData).subscribe(()=>
+    this.getData()
+    );
+  }
+
 }

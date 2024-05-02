@@ -1,11 +1,8 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Validators, FormGroup, FormBuilder } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
-
-
 import { Conge } from '../../models/conge.model';
 import { CongeService } from '../../service/conge/conge.service';
-
 
 @Component({
   selector: 'app-add-conge',

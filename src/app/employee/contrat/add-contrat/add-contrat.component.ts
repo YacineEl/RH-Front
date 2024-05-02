@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Contrat } from '../../models/contrat.model';
 import { ContratService } from '../../service/contrat/contrat.service';
@@ -14,6 +14,7 @@ export class AddContratComponent implements OnInit {
   contratForm: FormGroup;
   contrat: Contrat = new Contrat();
   theId:number;
+  @Output() newContrat: EventEmitter<Contrat> = new EventEmitter<Contrat>();
 
   constructor(private fb: FormBuilder,
     private contratService: ContratService,
@@ -40,11 +41,9 @@ export class AddContratComponent implements OnInit {
     if (this.contratForm.valid) {
       const contratData: Contrat = this.contratForm.value as Contrat;
       contratData.empId = this.contrat.empId;
-      this.contratService.addContrat(this.theId, contratData).subscribe();
-      console.log(contratData);
+      this.newContrat.emit(contratData);
       this.contratForm.reset();
     } else {
     }
   }
 }
-

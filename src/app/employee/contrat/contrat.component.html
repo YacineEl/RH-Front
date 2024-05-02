@@ -8,6 +8,7 @@
         <p><strong>Date de Début:</strong> {{ contrat.dateDebut | date }}</p>
         <p><strong>Date de Fin:</strong> {{ contrat.dateFin | date }}</p>
         <p><strong>Salaire Brut:</strong> {{ contrat.salaireBrut }}</p>
+        <button (click)="deleteContrat(contrat.id)" class="btn btn-danger">Supprimer</button>
       </li>
     </ul>
   </div>
@@ -17,5 +18,5 @@
   <button (click)="showAddContratForm()" class="btn btn-info">
     Ajouter un contrat
   </button>
-  <app-add-contrat *ngIf="showAddContrat"></app-add-contrat>
+  <app-add-contrat *ngIf="showAddContrat" (newContrat)="OnNewContrat($event)"></app-add-contrat>
 </div>
