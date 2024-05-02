@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Metier } from '../../models/metier.model';
 import { MetierService } from '../../service/metier/metier.service';
@@ -14,6 +14,7 @@ export class AddMetierComponent implements OnInit {
   metierForm: FormGroup;
   metier: Metier = new Metier();
   theId:number;
+  @Output() newMetier: EventEmitter<Metier> = new EventEmitter<Metier>();
 
   constructor(private fb: FormBuilder,
     private metierService: MetierService,
@@ -39,8 +40,7 @@ export class AddMetierComponent implements OnInit {
     if (this.metierForm.valid) {
       const metierData: Metier = this.metierForm.value as Metier;
       metierData.empId = this.metier.empId;
-      this.metierService.addMetier(this.theId, metierData).subscribe();
-      console.log(metierData);
+      this.newMetier.emit(metierData);
       this.metierForm.reset();
     } else {
     }

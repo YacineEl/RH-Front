@@ -7,6 +7,7 @@
           <p><strong>Nom du Métier:</strong> {{ metier.libelle }}</p>
           <p><strong>Debut Métier:</strong> {{ metier.dateDebut }}</p>
           <p><strong>Fin Métier:</strong> {{ metier.dateFin }}</p>
+          <button (click)="deleteMetier(metier.id)" class="btn btn-danger">Supprimer</button>
         </li>
       </ul>
     </div>
@@ -14,6 +15,5 @@
       <p>Aucun métier enregistré pour cet employé.</p>
     </div>
     <button (click)="showAddMetierForm()" class="btn btn-info">Ajouter un métier</button>
-    <app-add-metier *ngIf="showAddMetier"></app-add-metier>
+    <app-add-metier *ngIf="showAddMetier" (newMetier)="OnNewMetier($event)"></app-add-metier>
   </div>
-  

@@ -23,6 +23,10 @@ export class MetierComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.getData();
+  }
+
+  getData(){
     const employeeId = Number(this.route.snapshot.paramMap.get('id'));
     this.employeeId = employeeId;
     this.employeeService.getEmployeeById(employeeId).subscribe((employee) => {
@@ -34,7 +38,22 @@ export class MetierComponent implements OnInit {
     });
   }
 
+  deleteMetier(id: number){
+    this.metierService.deleteMetier(id).subscribe(()=>
+    this.getData()
+    );
+  }
+
   showAddMetierForm(): void {
     this.showAddMetier = !this.showAddMetier;
   }
+
+  OnNewMetier(metierData: Metier) {
+    this.employeeId = metierData.empId;
+    this.metierService.addMetier(this.employeeId, metierData).subscribe(()=>
+    this.getData()
+    );
+  }
+
+  protected readonly Metier = Metier;
 }
