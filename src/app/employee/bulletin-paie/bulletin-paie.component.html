@@ -1,0 +1,62 @@
+<div class="col-md-6 offset-md-3">
+  <h3>Add Payroll</h3>
+  <form [formGroup]="bulletinPaieForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="month">Month:</label>
+      <input type="text" id="month" formControlName="month" class="form-control"/>
+      <div *ngIf="
+          bulletinPaieForm.get('month').invalid && bulletinPaieForm.get('month').touched
+        " class="invalid-feedback">
+        Month is required.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="year">Year:</label>
+      <input type="number" id="year" formControlName="year" class="form-control"/>
+      <div *ngIf="
+          bulletinPaieForm.get('year').invalid && bulletinPaieForm.get('year').touched
+        " class="invalid-feedback">
+        Year is required.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="year">cotisationCNSS:</label>
+      <input type="number" id="cotisationCNSS" formControlName="cotisationCNSS" class="form-control"/>
+      <div *ngIf="
+          bulletinPaieForm.get('cotisationCNSS').invalid && bulletinPaieForm.get('year').touched
+        " class="invalid-feedback">
+        cotisationCNSS is required.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="year">cotisationAMO:</label>
+      <input type="number" id="cotisationAMO" formControlName="cotisationAMO" class="form-control"/>
+      <div *ngIf="
+          bulletinPaieForm.get('cotisationAMO').invalid && bulletinPaieForm.get('cotisationAMO').touched
+        " class="invalid-feedback">
+        cotisationAMO is required.
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="year">prelevementIGR:</label>
+      <input type="number" id="prelevementIGR" formControlName="prelevementIGR" class="form-control"/>
+      <div *ngIf="
+          bulletinPaieForm.get('prelevementIGR').invalid && bulletinPaieForm.get('prelevementIGR').touched
+        " class="invalid-feedback">
+        prelevementIGR is required.
+      </div>
+    </div>
+
+
+    <div class="sub-btn">
+      <button type="submit" [disabled]="bulletinPaieForm.invalid" class="btn btn-info">
+        Submit
+      </button>
+    </div>
+  </form>
+
+  <app-bulletin-paie-list></app-bulletin-paie-list>
+</div>

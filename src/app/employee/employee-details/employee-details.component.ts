@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class EmployeeDetailsComponent {
   @Input() employeeToDisplay: Employee;
-  
+
   constructor(private router: Router) { }
 
   updateEmployee(id:number): void {
@@ -23,5 +23,8 @@ export class EmployeeDetailsComponent {
   }
   metierEmployee(id:number):void{
     this.router.navigate(['metier-employee', id]);
+  }
+  bulletinPaieEmployee(id:number):void{
+    this.router.navigate(['payroll-employee', id])
   }
 }

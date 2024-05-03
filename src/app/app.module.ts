@@ -24,6 +24,9 @@ import { ContratComponent } from './employee/contrat/contrat.component';
 import { AddContratComponent } from './employee/contrat/add-contrat/add-contrat.component';
 import { MetierComponent } from './employee/metier/metier.component';
 import { AddMetierComponent } from './employee/metier/add-metier/add-metier.component';
+import { BulletinPaieComponent } from './employee/bulletin-paie/bulletin-paie.component';
+import { BulletinPaieItemComponent } from './employee/bulletin-paie/bulletin-paie-item/bulletin-paie-item.component';
+import { BulletinPaieListComponent } from './employee/bulletin-paie/bulletin-paie-list/bulletin-paie-list.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +42,10 @@ import { AddMetierComponent } from './employee/metier/add-metier/add-metier.comp
     ContratComponent,
     AddContratComponent,
     MetierComponent,
-    AddMetierComponent
+    AddMetierComponent,
+    BulletinPaieComponent,
+    BulletinPaieItemComponent,
+    BulletinPaieListComponent
   ],
   imports: [
     BrowserModule,

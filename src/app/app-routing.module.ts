@@ -6,6 +6,7 @@ import { UpdateEmployeeComponent } from './employee/update-employee/update-emplo
 import { CongeComponent } from './employee/conge/conge.component';
 import { ContratComponent } from './employee/contrat/contrat.component';
 import { MetierComponent } from './employee/metier/metier.component';
+import {BulletinPaieComponent} from "./employee/bulletin-paie/bulletin-paie.component";
 
 const routes: Routes = [
   {path:'employees', component: EmployeesComponent},
@@ -14,7 +15,8 @@ const routes: Routes = [
   {path: '', redirectTo: 'employees', pathMatch: 'full'},
   {path: 'conge-employee/:id', component:CongeComponent},
   {path: 'contrat-employee/:id', component: ContratComponent},
-  {path: 'metier-employee/:id', component: MetierComponent}
+  {path: 'metier-employee/:id', component: MetierComponent},
+  {path: 'payroll-employee/:id', component: BulletinPaieComponent }
 ];
 
 @NgModule({
