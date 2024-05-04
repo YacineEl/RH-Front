@@ -41,7 +41,7 @@ export class BulletinPaieComponent {
   }
 
   goToBulletinPaieList(): void {
-    this.router.navigate(['bulletin-paie']);
+    this.router.navigate(['payroll-employee-list', this.route.snapshot.paramMap.get('id')]);
   }
 
   onSubmit(): void {
@@ -55,4 +55,5 @@ export class BulletinPaieComponent {
       this.saveBulletinPaie(newBulletinPaie,formData.employeeId,formData.year,formData.month);
     }
   }
+
 }

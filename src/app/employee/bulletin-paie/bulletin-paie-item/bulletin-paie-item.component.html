@@ -1,15 +1,8 @@
 <div *ngIf="bulletinPaie">
-  <h3>Bulletin de Paie</h3>
-  <p><strong>ID:</strong> {{ bulletinPaie.id }}</p>
-  <p><strong>Employé:</strong> {{ bulletinPaie.employe?.nom }} {{ bulletinPaie.employe?.prenom }}</p>
-  <p><strong>Date:</strong> {{ bulletinPaie.date | date }}</p>
-  <p><strong>Nombre de Jours Travaillés:</strong> {{ bulletinPaie.nbJoursTravailles }}</p>
-  <p><strong>Taux Horaire:</strong> {{ bulletinPaie.tauxHoraire }}</p>
-  <p><strong>Salaire Brut:</strong> {{ bulletinPaie.salaireBrut }}</p>
-  <p><strong>Cotisation CNSS:</strong> {{ bulletinPaie.cotisationCNSS }}</p>
-  <p><strong>Cotisation AMO:</strong> {{ bulletinPaie.cotisationAMO }}</p>
-  <p><strong>Prélèvement IGR:</strong> {{ bulletinPaie.prelevementIGR }}</p>
-  <p><strong>Congés Payés:</strong> {{ bulletinPaie.congesPayes }}</p>
-  <p><strong>Congés Sans Solde Montant:</strong> {{ bulletinPaie.congesSansSoldeMontant }}</p>
-  <p><strong>Net à Payer:</strong> {{ bulletinPaie.netAPayer }}</p>
+  <button (click)="OnBulletinPaieClick()">
+    <h3>Bulletin de Paie</h3>
+    <p><strong>ID:</strong> {{ bulletinPaie.id }}</p>
+    <p><strong>Date:</strong> {{ bulletinPaie.date | date }}</p>
+    <p><strong>Net à Payer:</strong> {{ bulletinPaie.netAPayer }}</p>
+  </button>
 </div>

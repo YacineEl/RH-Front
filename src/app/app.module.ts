@@ -27,6 +27,7 @@ import { AddMetierComponent } from './employee/metier/add-metier/add-metier.comp
 import { BulletinPaieComponent } from './employee/bulletin-paie/bulletin-paie.component';
 import { BulletinPaieItemComponent } from './employee/bulletin-paie/bulletin-paie-item/bulletin-paie-item.component';
 import { BulletinPaieListComponent } from './employee/bulletin-paie/bulletin-paie-list/bulletin-paie-list.component';
+import { BulletinPaieItemDetailsComponent } from './employee/bulletin-paie/bulletin-paie-item-details/bulletin-paie-item-details.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { BulletinPaieListComponent } from './employee/bulletin-paie/bulletin-pai
     AddMetierComponent,
     BulletinPaieComponent,
     BulletinPaieItemComponent,
-    BulletinPaieListComponent
+    BulletinPaieListComponent,
+    BulletinPaieItemDetailsComponent
   ],
   imports: [
     BrowserModule,

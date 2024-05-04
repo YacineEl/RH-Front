@@ -1,5 +1,6 @@
-import {Component, Input} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {BulletinPaie} from "../../models/bulletinPaie.model";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-bulletin-paie-item',
@@ -8,5 +9,11 @@ import {BulletinPaie} from "../../models/bulletinPaie.model";
 })
 export class BulletinPaieItemComponent {
   @Input() bulletinPaie : BulletinPaie;
+  @Output() selectBulletinPaie : EventEmitter<BulletinPaie> = new EventEmitter<BulletinPaie>();
 
+  constructor(private router: Router) {
+  }
+  OnBulletinPaieClick(){
+    this.selectBulletinPaie.emit(this.bulletinPaie);
+  }
 }

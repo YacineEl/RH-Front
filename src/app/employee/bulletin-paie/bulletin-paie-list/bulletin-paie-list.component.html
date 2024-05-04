@@ -1,7 +1,18 @@
 <div class="row">
-  <app-bulletin-paie-item
-    *ngFor="let bp of bulletinPaies"
-    [bulletinPaie]="bp"
-  ></app-bulletin-paie-item>
+  <div class="col-md-6">
+    <app-bulletin-paie-item
+      *ngFor="let bp of bulletinPaies"
+      [bulletinPaie]="bp"
+      (selectBulletinPaie) = "OnBulletinSelected($event)">
+    </app-bulletin-paie-item>
+  </div>
+  <div class="col-md-6">
+    <ng-container *ngIf="bulletinPaieSelected">
+      <app-bulletin-paie-item-details [bulletinPaie]="bulletinPaieSelected"></app-bulletin-paie-item-details>
+    </ng-container>
+    <ng-container *ngIf="!bulletinPaieSelected">
+      <p>Please Select A Payroll</p>
+    </ng-container>
+  </div>
 </div>
 

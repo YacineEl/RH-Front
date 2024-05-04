@@ -7,6 +7,10 @@ import { CongeComponent } from './employee/conge/conge.component';
 import { ContratComponent } from './employee/contrat/contrat.component';
 import { MetierComponent } from './employee/metier/metier.component';
 import {BulletinPaieComponent} from "./employee/bulletin-paie/bulletin-paie.component";
+import {
+  BulletinPaieItemDetailsComponent
+} from "./employee/bulletin-paie/bulletin-paie-item-details/bulletin-paie-item-details.component";
+import {BulletinPaieListComponent} from "./employee/bulletin-paie/bulletin-paie-list/bulletin-paie-list.component";
 
 const routes: Routes = [
   {path:'employees', component: EmployeesComponent},
@@ -16,7 +20,8 @@ const routes: Routes = [
   {path: 'conge-employee/:id', component:CongeComponent},
   {path: 'contrat-employee/:id', component: ContratComponent},
   {path: 'metier-employee/:id', component: MetierComponent},
-  {path: 'payroll-employee/:id', component: BulletinPaieComponent }
+  {path: 'payroll-employee/:id', component: BulletinPaieComponent },
+  {path: 'payroll-employee-list/:id', component: BulletinPaieListComponent },
 ];
 
 @NgModule({

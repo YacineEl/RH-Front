@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {BulletinPaie} from "../../models/bulletinPaie.model";
 import {BulletinPaieService} from "../../service/bulletin-paie/bulletin-paie.service";
 import {ActivatedRoute} from "@angular/router";
+import {Employee} from "../../employee.model";
 
 @Component({
   selector: 'app-bulletin-paie-list',
@@ -12,6 +13,7 @@ export class BulletinPaieListComponent {
 
   bulletinPaies: BulletinPaie[] = [];
   employeeId: number;
+  bulletinPaieSelected: BulletinPaie;
 
   constructor(private bulletinPaieService: BulletinPaieService,
               private route: ActivatedRoute) {
@@ -24,5 +26,9 @@ export class BulletinPaieListComponent {
     this.bulletinPaieService.getBulletinPaieEmployeeId(id).subscribe((bulletinPaies) => {
       this.bulletinPaies = bulletinPaies;
     })
+  }
+
+  OnBulletinSelected(bulletinPaie: BulletinPaie){
+    this.bulletinPaieSelected= bulletinPaie;
   }
 }
