@@ -36,7 +36,7 @@ export class EmployeeService {
     if (metierLabel) {
       params = params.set('metierLabel', metierLabel);
     }
-    return this.httpClient.get<Employee[]>(`${this.baseUrl}`, { params });
+    return this.httpClient.get<Employee[]>(`${this.baseUrl}/filter`, { params });
   }
 
 }

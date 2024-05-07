@@ -7,7 +7,6 @@ import { Employee } from '../employee.model';
   styleUrl: './employees.component.css'
 })
 export class EmployeesComponent {
-
   emp : Employee;
 
   employeeReceived(event: Employee){

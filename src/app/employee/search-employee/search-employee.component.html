@@ -3,19 +3,42 @@
   <input type="number" [(ngModel)]="salary">
 </div>
 <div>
-<div>
   <label>Metier:</label>
   <select [(ngModel)]="metier">
     <option value="">Select Metier</option>
     <option *ngFor="let metier of metiers" [value]="metier">{{ metier }}</option>
   </select>
 </div>
-<button (click)="applyFilter()">Apply Filter</button>
+<button (click)="filterEmployees()">Apply Filter</button>
 
-<div *ngIf="filteredEmployees$ | async as employees">
-  <ul>
-    <li *ngFor="let employee of employees">
-      <app-employee-item [employee]="employee"></app-employee-item>
-    </li>
-  </ul>
+<div class="row">
+  <div class="col-md-5">
+    <div *ngIf="filteredEmployees$ | async as employees">
+      <ul>
+        <li *ngFor="let employee of employees">
+          <button class="list-group-item clickable" (click)="selectEmployee(employee)">
+            <div class="row">
+              <div class="col-md-4">
+                {{ employee.matricule }}
+              </div>
+              <div class="col-md-4">
+                {{ employee.nom }}
+              </div>
+              <div class="col-md-4">
+                {{ employee.prenom }}
+              </div>
+            </div>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="col-md-7">
+    <ng-container *ngIf="selectedEmployee">
+      <app-employee-details [employeeToDisplay]="selectedEmployee"></app-employee-details>
+    </ng-container>
+    <ng-container *ngIf="!selectedEmployee">
+      <p>Please Select An Employee</p>
+    </ng-container>
+  </div>
 </div>
