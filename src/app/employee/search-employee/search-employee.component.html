@@ -1,0 +1,21 @@
+<div>
+  <label>Salary:</label>
+  <input type="number" [(ngModel)]="salary">
+</div>
+<div>
+<div>
+  <label>Metier:</label>
+  <select [(ngModel)]="metier">
+    <option value="">Select Metier</option>
+    <option *ngFor="let metier of metiers" [value]="metier">{{ metier }}</option>
+  </select>
+</div>
+<button (click)="applyFilter()">Apply Filter</button>
+
+<div *ngIf="filteredEmployees$ | async as employees">
+  <ul>
+    <li *ngFor="let employee of employees">
+      <app-employee-item [employee]="employee"></app-employee-item>
+    </li>
+  </ul>
+</div>

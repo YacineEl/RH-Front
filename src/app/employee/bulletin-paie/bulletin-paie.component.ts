@@ -12,6 +12,7 @@ import {BulletinPaieService} from "../service/bulletin-paie/bulletin-paie.servic
 export class BulletinPaieComponent {
   bulletinPaieForm: FormGroup;
   bulletinPaie: BulletinPaie;
+  allBulletinPaie: BulletinPaie[];
 
   constructor(private fb: FormBuilder,
               private bulletinPaieService: BulletinPaieService,
@@ -23,10 +24,7 @@ export class BulletinPaieComponent {
     this.bulletinPaieForm = this.fb.group({
       employeeId: [employeeId],
       month: ['', Validators.required],
-      year: ['', Validators.required],
-      cotisationCNSS: ['', Validators.required],
-      cotisationAMO: ['', Validators.required],
-      prelevementIGR: ['', Validators.required],
+      year: ['', Validators.required]
     });
   }
 
@@ -48,9 +46,10 @@ export class BulletinPaieComponent {
     if (this.bulletinPaieForm.valid) {
       const formData = this.bulletinPaieForm.value;
       const newBulletinPaie: BulletinPaie = new BulletinPaie();
-      newBulletinPaie.cotisationCNSS = formData.cotisationCNSS;
-      newBulletinPaie.cotisationAMO = formData.cotisationAMO;
-      newBulletinPaie.prelevementIGR = formData.prelevementIGR;
+      // newBulletinPaie.cotisationCNSS = formData.cotisationCNSS;
+      // newBulletinPaie.cotisationAMO = formData.cotisationAMO;
+      // newBulletinPaie.prelevementIGR = formData.prelevementIGR;
+
       console.log(newBulletinPaie);
       this.saveBulletinPaie(newBulletinPaie,formData.employeeId,formData.year,formData.month);
     }

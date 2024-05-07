@@ -28,6 +28,7 @@ import { BulletinPaieComponent } from './employee/bulletin-paie/bulletin-paie.co
 import { BulletinPaieItemComponent } from './employee/bulletin-paie/bulletin-paie-item/bulletin-paie-item.component';
 import { BulletinPaieListComponent } from './employee/bulletin-paie/bulletin-paie-list/bulletin-paie-list.component';
 import { BulletinPaieItemDetailsComponent } from './employee/bulletin-paie/bulletin-paie-item-details/bulletin-paie-item-details.component';
+import { SearchEmployeeComponent } from './employee/search-employee/search-employee.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { BulletinPaieItemDetailsComponent } from './employee/bulletin-paie/bulle
     BulletinPaieComponent,
     BulletinPaieItemComponent,
     BulletinPaieListComponent,
-    BulletinPaieItemDetailsComponent
+    BulletinPaieItemDetailsComponent,
+    SearchEmployeeComponent
   ],
   imports: [
     BrowserModule,
